@@ -60,6 +60,17 @@ app.post('/api/gemini', async (req, res) => {
   }
 });
 
+// Root path handler
+app.get('/', (req, res) => {
+  res.status(200).json({ 
+    message: 'MADHAVA API is running', 
+    endpoints: {
+      health: '/health',
+      gemini: '/api/gemini'
+    }
+  });
+});
+
 // Start the server
 // For local development
 if (process.env.NODE_ENV !== 'production') {

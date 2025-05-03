@@ -4,7 +4,7 @@ import QueryInterface from '../components/QueryInterface';
 import './DomainPage.css';
 
 // Hardcode the API URL to ensure it's correct
-const API_BASE_URL = 'http://localhost:5001';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001';
 
 const DomainPage = ({ domain, description, icon }) => {
   const [serverStatus, setServerStatus] = useState('unknown');
