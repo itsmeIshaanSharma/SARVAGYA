@@ -61,6 +61,11 @@ app.post('/api/gemini', async (req, res) => {
 });
 
 // Root path handler
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
+});
+
+// Root path handler
 app.get('/', (req, res) => {
   res.status(200).json({ 
     message: 'MADHAVA API is running', 
