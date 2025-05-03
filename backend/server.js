@@ -11,7 +11,7 @@ const port = process.env.PORT || 5001;
 
 // Configure CORS to allow requests from the frontend
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:3000',
+  origin: process.env.CLIENT_URL || 'https://madhava-client.vercel.app',
   methods: ['GET', 'POST'],
   credentials: true
 }));
@@ -61,7 +61,13 @@ app.post('/api/gemini', async (req, res) => {
 });
 
 // Start the server
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-  console.log(`API endpoint: http://localhost:${port}/api/gemini`);
-}); 
+// For local development
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+    console.log(`API endpoint: http://localhost:${port}/api/gemini`);
+  });
+}
+
+// Export the Express API for Vercel
+export default app;
