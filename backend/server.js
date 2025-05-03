@@ -11,7 +11,7 @@ const port = process.env.PORT || 5001;
 
 // Configure CORS to allow requests from the frontend
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'https://madhava-client.vercel.app',
+  origin: [process.env.CLIENT_URL, 'https://madhava-client.vercel.app', 'https://madhava-client.vercel.app/'],
   methods: ['GET', 'POST'],
   credentials: true
 }));
