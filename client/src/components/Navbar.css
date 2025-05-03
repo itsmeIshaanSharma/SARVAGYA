@@ -1,0 +1,259 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a1a1a;
+  padding: 0.8rem 1rem;
+  color: #fff;
+  position: relative;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+}
+
+.navbar-links ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.navbar-links ul li a:hover {
+  color: #63f5aa;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.auth-button {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.auth-button:hover {
+  background: #357ab8;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.navbar.dark {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-center {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.navbar-center .nav-link {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menu-button:hover {
+  background-color: var(--bg-primary);
+  transform: scale(1.05);
+}
+
+.dark .menu-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.logo img{
+  width: 10vw;
+  
+}
+
+.logo:hover {
+  color: var(--accent-color);
+  transform: scale(1.05);
+}
+
+.nav-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: var(--bg-primary);
+  color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+.dark .nav-link {
+  color: var(--text-primary);
+}
+
+.dark .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  color: var(--text-primary);
+}
+
+.theme-toggle:hover {
+  background-color: var(--bg-primary);
+  transform: scale(1.05);
+}
+
+.dark .theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.profile-section {
+  position: relative;
+}
+
+.profile-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-color), var(--button-hover));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.auth-button.signin {
+  background: #121212;
+
+  color: var(--text-primary);
+}
+
+.dark .auth-button.signin {
+  border-color: var(--border-color);
+}
+
+.auth-button.signin:hover {
+  background-color: var(--bg-primary);
+  transform: translateY(-2px);
+}
+
+.dark .auth-button.signin:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.auth-button.signup {
+
+  background-color: #121212;
+
+  font-weight: 600;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+
+}
+
+.auth-button.signup:hover {
+  background: linear-gradient(135deg, #00ffb3 20%, #00b3ff 80%);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(0, 255, 179, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-center {
+    display: none; /* Hide center links on smaller screens */
+  }
+
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-right .nav-link {
+    display: none;
+  }
+
+  .navbar-actions {
+    gap: 0.5rem;
+  }
+
+  .auth-button {
+    padding: 0.5rem;
+  }
+} 

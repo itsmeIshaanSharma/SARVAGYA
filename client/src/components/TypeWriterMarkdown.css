@@ -1,0 +1,13 @@
+.typewriter-markdown {
+  width: 100%;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: left;
+}
+
+.typing-text {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  white-space: pre-wrap;
+  word-break: break-word;
+} 
