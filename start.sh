@@ -56,7 +56,7 @@ setup_frontend
 
 # Start backend server
 echo -e "${GREEN}Starting backend server...${NC}"
-(cd backend && node server.js > ../logs/backend.log 2>&1 &)
+(cd backend && npm install && npm run dev > ../logs/backend.log 2>&1 &)
 BACKEND_PID=$!
 
 # Wait for backend to start
@@ -86,20 +86,6 @@ echo -e "\n${GREEN}Logs are available in the logs directory:${NC}"
 echo "- Frontend: logs/frontend.log"
 echo "- Backend: logs/backend.log"
 echo -e "\n${BLUE}Press Ctrl+C to stop both servers${NC}"
-
-# Create stop script
-cat > stop.sh << EOL
-#!/bin/bash
-echo "Stopping all services..."
-kill_port() {
-    lsof -ti :"\$1" | xargs kill -9 2>/dev/null || true
-}
-kill_port $BACKEND_PORT
-kill_port $FRONTEND_PORT
-echo "All services stopped."
-EOL
-
-chmod +x stop.sh
 
 # Keep the script running and show logs
 echo -e "\n${GREEN}Showing logs (Ctrl+C to stop viewing logs, services will continue running)${NC}\n"

@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import runChat from './gemini.js';
+import runChat from './services/gemini.js';
 
 // Load environment variables
 dotenv.config();
@@ -9,11 +9,14 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 5001;
 
-// Configure CORS to allow requests from the frontend
+// Configure CORS with expanded options
 app.use(cors({
-  origin: [process.env.CLIENT_URL, 'https://madhava-client.vercel.app', 'https://madhava-client.vercel.app/'],
-  methods: ['GET', 'POST'],
-  credentials: true
+  origin: 'http://localhost:3000',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+  preflightContinue: false,
+  optionsSuccessStatus: 204
 }));
 
 // Parse JSON request bodies

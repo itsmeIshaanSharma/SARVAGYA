@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 html {
   scroll-behavior: smooth;
   overflow-y: scroll;
@@ -245,4 +248,4 @@ main {
   text-decoration: underline;
 }
 
-/* Add to existing styles */ 
+/* Add to existing styles */
