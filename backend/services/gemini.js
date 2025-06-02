@@ -12,7 +12,7 @@ dotenv.config();
 
 // Access API key from environment variables
 const API_KEY = process.env.GEMINI_API_KEY || 'AIzaSyDwjoAuxneLyup9X9q1Wb8B3UpvG3_izik';
-const MODEL_NAME = "gemini-1.5-pro";
+const MODEL_NAME = "gemini-2.0-flash";
 
 // Check if API key is available
 if (!API_KEY) {
