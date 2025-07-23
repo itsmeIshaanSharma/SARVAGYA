@@ -1,6 +1,6 @@
-# MADHAVA - Domain-Specific AI Assistant
+# SARVAGYA - Domain-Specific AI Assistant
 
-MADHAVA is a domain-specific AI assistant that uses Google's Gemini 1.5 Pro model to provide specialized responses across different domains.
+SARVAGYA is a domain-specific AI assistant that uses Google's Gemini 1.5 Pro model to provide specialized responses across different domains.
 
 ## Features
 
